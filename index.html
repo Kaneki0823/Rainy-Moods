@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211b1b">
+  <meta name="description" content="A little place where Rain can rest, breathe, and feel whatever she needs to feel.">
+  <title>A Little Place for Rain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ambient-background" id="ambientBackground"></div>
+  <div class="grain"></div>
+
+  <main class="app">
+
+    <!-- INTRODUCTION -->
+    <section class="screen intro-screen active" id="introScreen">
+      <div class="intro-content">
+        <div class="tiny-orbit">
+          <span class="orbit-dot"></span>
+          <span class="orbit-dot second"></span>
+          <span class="orbit-dot third"></span>
+          <div class="orbit-center">R</div>
+        </div>
+
+        <p class="eyebrow">A LITTLE PLACE JUST FOR YOU</p>
+
+        <h1 class="intro-title">
+          You don't have to<br>
+          <em>explain.</em>
+        </h1>
+
+        <p class="intro-description">
+          Whatever kind of day you're having, whatever is going
+          through your mind, you can take a little break here.
+        </p>
+
+        <p class="intro-soft">
+          No need to pretend. No need to find the right words.
+          You can simply be.
+        </p>
+
+        <button class="primary-button" id="enterButton">
+          <span>Come in, Rain</span>
+          <span class="button-arrow">↗</span>
+        </button>
+
+        <span class="signature">made with care, by Kei</span>
+      </div>
+      <div class="intro-bottom-note">TAKE YOUR TIME · THERE'S NO RUSH</div>
+    </section>
+
+
+    <!-- MOOD SELECTION -->
+    <section class="screen mood-screen" id="moodScreen">
+      <header class="topbar">
+        <div class="brand-mark">R.</div>
+        <span class="topbar-label">A LITTLE PLACE FOR RAIN</span>
+        <span class="topbar-star">✳</span>
+      </header>
+
+      <div class="mood-content">
+        <p class="eyebrow">FIRST, LET'S CHECK IN</p>
+        <h2 class="section-title">How are you<br><em>feeling today?</em></h2>
+        <p class="section-description">
+          You don't have to explain why. Just choose the feeling
+          that comes closest. And if you can't quite name it,
+          that's okay too.
+        </p>
+
+        <div class="mood-grid">
+          <button class="mood-card tired" data-mood="tired">
+            <span class="mood-icon">☾</span>
+            <span class="mood-name">Tired</span>
+            <span class="mood-subtitle">I need a little rest</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+
+          <button class="mood-card sad" data-mood="sad">
+            <span class="mood-icon">☂</span>
+            <span class="mood-name">Sad</span>
+            <span class="mood-subtitle">Things feel a little heavy</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+
+          <button class="mood-card angry" data-mood="angry">
+            <span class="mood-icon">☼</span>
+            <span class="mood-name">Angry</span>
+            <span class="mood-subtitle">I need some space</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+
+          <button class="mood-card overwhelmed" data-mood="overwhelmed">
+            <span class="mood-icon">≈</span>
+            <span class="mood-name">Overwhelmed</span>
+            <span class="mood-subtitle">Everything feels like a lot</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+
+          <button class="mood-card confused" data-mood="confused">
+            <span class="mood-icon">✧</span>
+            <span class="mood-name">Confused</span>
+            <span class="mood-subtitle">I don't know what I feel</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+
+          <button class="mood-card okay" data-mood="okay">
+            <span class="mood-icon">❀</span>
+            <span class="mood-name">Okay</span>
+            <span class="mood-subtitle">Today feels a little lighter</span>
+            <span class="mood-arrow">↗</span>
+          </button>
+        </div>
+
+        <p class="mood-footer">Every feeling is allowed here, Rain.</p>
+      </div>
+    </section>
+
+
+    <!-- FEELING EXPERIENCE -->
+    <section class="screen feeling-screen" id="feelingScreen">
+      <header class="topbar">
+        <button class="back-button" id="backButton" aria-label="Back to feelings">←</button>
+        <span class="topbar-label">A MOMENT FOR YOU</span>
+        <span class="topbar-star">✳</span>
+      </header>
+
+      <div class="scene" id="scene">
+        <div class="scene-decoration decoration-one"></div>
+        <div class="scene-decoration decoration-two"></div>
+        <div class="scene-decoration decoration-three"></div>
+        <div class="scene-particles" id="sceneParticles"></div>
+
+        <div class="scene-content">
+          <span class="scene-symbol" id="sceneSymbol">☾</span>
+          <p class="eyebrow" id="moodEyebrow">A LITTLE REMINDER</p>
+          <h2 class="feeling-title" id="moodTitle">It's okay to rest.</h2>
+          <p class="feeling-message" id="moodMessage"></p>
+          <p class="feeling-extra" id="moodExtra"></p>
+
+          <div class="reminder-card">
+            <span class="reminder-star">✦</span>
+            <p id="moodReminder"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MUSIC PLAYER -->
+      <div class="music-card" id="musicCard">
+        <div class="music-art" id="musicArt">
+          <span>♫</span>
+          <div class="music-art-orbit"></div>
+        </div>
+
+        <div class="music-details">
+          <span class="music-overline">A SONG FOR THIS MOMENT</span>
+          <p class="music-title" id="musicTitle">A little music for you</p>
+          <p class="music-artist" id="musicArtist">Just take your time</p>
+          <div class="music-progress">
+            <div class="music-progress-fill" id="musicProgress"></div>
+          </div>
+          <div class="music-time">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+
+        <button class="music-toggle" id="musicToggle" aria-label="Pause music">
+          <span id="musicToggleIcon">Ⅱ</span>
+        </button>
+      </div>
+
+      <audio id="moodAudio" preload="auto" playsinline></audio>
+
+      <div class="feeling-actions">
+        <button class="soft-button" id="breatheButton">
+          Let's take a breath
+        </button>
+        <button class="text-button" id="letterButton">
+          A little more for you <span>→</span>
+        </button>
+      </div>
+
+      <p class="bottom-signature">You don't have to carry everything at once.</p>
+    </section>
+
+
+    <!-- BREATHING MOMENT -->
+    <section class="screen breathing-screen" id="breathingScreen">
+      <button class="back-button breathing-back" id="breathingBack">← Back</button>
+
+      <div class="breathing-content">
+        <p class="eyebrow">LET'S SLOW THINGS DOWN</p>
+        <h2 class="section-title">Just for a<br><em>little while.</em></h2>
+        <p class="section-description">
+          There's nothing you need to solve in this moment.
+          Let's just take one gentle breath.
+        </p>
+
+        <div class="breathing-orbit" id="breathingOrbit">
+          <div class="breathing-circle">
+            <span id="breathingInstruction">Ready?</span>
+          </div>
+          <div class="breathing-ring"></div>
+        </div>
+
+        <p class="breathing-count" id="breathingCount">Whenever you're ready.</p>
+
+        <button class="primary-button" id="startBreathing">
+          <span>Begin breathing</span>
+          <span class="button-arrow">↗</span>
+        </button>
+
+        <p class="breathing-note">
+          Breathe in gently, hold if comfortable, then slowly breathe out.
+          You can stop whenever you want.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FINAL LETTER -->
+    <section class="screen letter-screen" id="letterScreen">
+      <div class="letter-stars" id="letterStars"></div>
+
+      <div class="letter-content">
+        <p class="eyebrow">BEFORE YOU GO</p>
+        <h2 class="section-title">A little something<br><em>from me to you.</em></h2>
+
+        <div class="heart-star" id="heartStar">
+          <span>♡</span>
+        </div>
+
+        <div class="letter-paper">
+          <div class="letter-paper-top">
+            <span>FOR RAIN</span>
+            <span>♡</span>
+          </div>
+
+          <h3>Hey, Rain.</h3>
+
+          <p>
+            I made this little place because I wanted you to have
+            somewhere you could go when things feel a little too
+            heavy. Somewhere you don't have to explain yourself,
+            pretend you're okay, or find the perfect words for
+            whatever you're feeling.
+          </p>
+
+          <p>
+            I know I haven't always made things easier for you.
+            I know there are things I've done that hurt you, and
+            I'm genuinely sorry for the moments when I became
+            another reason for you to feel tired or overwhelmed.
+            You didn't deserve that.
+          </p>
+
+          <p>
+            I can't promise that everything will always be perfect.
+            I can't take away every difficult day or fix everything
+            you're going through. But I can promise to keep trying
+            to understand you, to listen more carefully, and to be
+            more mindful of how my actions affect you.
+          </p>
+
+          <p>
+            You don't owe me a smile just because I made this.
+            You don't have to feel better immediately, and you
+            don't have to reassure me. This is simply something
+            I wanted to give you.
+          </p>
+
+          <p>
+            On the days when you're tired, I hope you let yourself
+            rest. On the days when you're sad, I hope you remember
+            that your feelings matter. On the days when you're
+            angry or confused, I hope you give yourself the same
+            patience you so often give to others.
+          </p>
+
+          <p>
+            And on the days when you're okay, I hope you get to
+            enjoy every little bit of that happiness.
+          </p>
+
+          <p>
+            Thank you for being you, Rain. I hope this little
+            corner of the internet reminds you that you deserve
+            gentleness, patience, and care — even on the days
+            when you don't feel your best.
+          </p>
+
+          <p class="letter-ending">
+            Take your time. I'll keep learning how to love you better.
+          </p>
+
+          <div class="letter-signature">
+            <span>With love,</span>
+            <strong>Kei 🤎</strong>
+          </div>
+        </div>
+
+        <button class="text-button restart-button" id="restartButton">
+          Back to the beginning <span>↗</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
